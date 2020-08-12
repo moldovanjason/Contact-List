@@ -56,8 +56,8 @@ export const ContactCard = props => {
  * your component's properties
  **/
 ContactCard.propTypes = {
-	history: PropTypes.object,
-	onDelete: PropTypes.func
+    history: PropTypes.object,
+    index:PropType.number;
 };
 
 /**
