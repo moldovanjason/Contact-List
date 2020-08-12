@@ -4,10 +4,10 @@ import { Context } from "../store/appContext";
 
 export const AddContact = () => {
 	const [state, setState] = useState({
-		name: null,
-		email: null,
-		phone: null,
-		address: null
+        name: null,
+        address: null,
+        phone: null,
+        email: null,
 	});
 	return (
 		<div className="container">

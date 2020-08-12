@@ -25,7 +25,7 @@ export const Contacts = () => {
 								{/* in the map call ContactCard; pass name, address ect... as props */}
 								{/* <ContactCard onDelete={() => setState({ showModal: true })} /> */}
 								{store.allContacts.map((value, indexOfContact) => (
-									<ContactCard name={value.name} key={indexOfContact} index={indexOfContact} />
+									<ContactCard name={value.name} address={value.address} phone={value.phone} email={value.email} key={indexOfContact} index={indexOfContact} />
 								))}
 							</ul>
 						</div>
