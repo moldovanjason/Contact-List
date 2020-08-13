@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { ContactCard } from "../component/ContactCard.js";
+import ContactCard from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
 
 export const Contacts = () => {
@@ -26,7 +26,7 @@ export const Contacts = () => {
 								{/* <ContactCard onDelete={() => setState({ showModal: true })} /> */}
 								{store.allContacts.map((value, indexOfContact) => (
 									<ContactCard
-										name={value.name}
+										name={value.full_name}
 										address={value.address}
 										phone={value.phone}
 										email={value.email}

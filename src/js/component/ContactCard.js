@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 
-export const ContactCard = props => {
+const ContactCard = props => {
 	// display contact details from props
+	console.log(props);
 	return (
 		<li className="list-group-item">
 			<Context.Consumer>
@@ -20,7 +21,7 @@ export const ContactCard = props => {
 						</div>
 						<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 							<div className=" float-right">
-								<button className="btn">
+								<button className="btn" onClick={() => props.history.push(`/edit/${props.index}`)}>
 									<i className="fas fa-pencil-alt mr-3" />
 								</button>
 								<button className="btn" onClick={() => actions.deleteContacts(props.index)}>
@@ -75,3 +76,5 @@ ContactCard.propTypes = {
 ContactCard.defaultProps = {
 	onDelete: null
 };
+
+export default withRouter(ContactCard);

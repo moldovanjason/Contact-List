@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
 
-export const AddContact = () => {
+export const AddContact = props => {
 	const [state, setState] = useState({
 		name: null,
 		address: null,
 		phone: null,
 		email: null
 	});
+
+	function handleSave(actions) {
+		if (props.match.path === "/add") {
+			actions.addContacts(state.name, state.address, state.phone, state.email);
+		} else actions.editContact(state.name, state.address, state.phone, state.email, +props.match.params.index);
+	}
+
 	return (
 		<div className="container">
 			<Context.Consumer>
@@ -62,7 +70,9 @@ export const AddContact = () => {
 							</div>
 							<button
 								disabled={!state.name || !state.address || !state.phone || !state.email}
-								onClick={() => actions.addContacts(state.name, state.address, state.phone, state.email)}
+								onClick={() => {
+									handleSave(actions);
+								}}
 								type="button"
 								className="btn btn-primary form-control">
 								save
@@ -76,4 +86,8 @@ export const AddContact = () => {
 			</Context.Consumer>
 		</div>
 	);
+};
+
+AddContact.propTypes = {
+	match: PropTypes.object
 };

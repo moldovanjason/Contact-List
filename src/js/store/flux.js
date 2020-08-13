@@ -37,13 +37,27 @@ const getState = ({ getStore, setStore }) => {
 				// same as line 13
 			},
 
-			editContact: (name, address, phone, email, indexDel) => {
-				const store = getStore();
-				const modContact = { name, address, phone, email };
-				const updatedContact = store.allContacts.map((value, index) =>
-					index === indexDel ? modContact : value
-				);
-				setStore({ allContacts: updatedContact });
+			editContact: (name, address, number, email, indexDel) => {
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${indexDel}`, {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						agenda_slug: "moldovanjason",
+						full_name: name,
+						email: email,
+						address: address,
+						phone: number
+					})
+				})
+					.then(res => res.json())
+					.then(() => {
+						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/moldovanjason")
+							.then(red => red.json())
+							.then(data => setStore({ allContacts: data }));
+					});
+
 				// build fetch w/ put method
 				// 2nd .then will have a fetch like line13
 			}
