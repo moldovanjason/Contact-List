@@ -76,3 +76,4 @@ ContactCard.propTypes = {
 ContactCard.defaultProps = {
 	onDelete: null
 };
+/
