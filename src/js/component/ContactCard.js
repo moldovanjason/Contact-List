@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 
 export const ContactCard = props => {
 	// display contact details from props
-	console.log(props);
 	return (
 		<li className="list-group-item">
 			<Context.Consumer>
@@ -21,7 +20,7 @@ export const ContactCard = props => {
 						</div>
 						<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 							<div className=" float-right">
-								<button className="btn" onClick={() => actions.deleteContacts(props.index)}>
+								<button className="btn" onClick={}>
 									<i className="fas fa-pencil-alt mr-3" />
 								</button>
 								<button className="btn" onClick={() => actions.deleteContacts(props.index)}>
@@ -65,7 +64,7 @@ ContactCard.propTypes = {
 	index: PropTypes.number,
 	name: PropTypes.string,
 	address: PropTypes.string,
-	phone: PropTypes.string,
+	phone: PropTypes.number,
 	email: PropTypes.string
 };
 
