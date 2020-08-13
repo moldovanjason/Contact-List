@@ -61,9 +61,8 @@ export const AddContact = () => {
 								/>
 							</div>
 							<button
-								onClick={() =>
-									actions.addContacts(state.name, state.address, state.number, state.email)
-								}
+								disabled={!state.name || !state.address || !state.phone || !state.email}
+								onClick={() => actions.addContacts(state.name, state.address, state.phone, state.email)}
 								type="button"
 								className="btn btn-primary form-control">
 								save
