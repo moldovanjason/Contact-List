@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-export const AddContact = props => {
+export const EditContact = props => {
 	const [state, setState] = useState({
 		name: null,
 		address: null,
@@ -11,18 +11,13 @@ export const AddContact = props => {
 		email: null
 	});
 
-	// function handleSave(actions) {
-	// 	if (props.match.path === "/add") {
-	// 		actions.addContacts(state.name, state.address, state.phone, state.email);
-	// 	} else actions.editContact(state.name, state.address, state.phone, state.email, +props.match.params.index);
-	// }
-
 	return (
 		<div className="container">
 			<Context.Consumer>
 				{({ actions, store }) => (
+                    var contact = store.allContacts.find((element) => )
 					<div>
-						<h1 className="text-center mt-5">Add a new contact</h1>
+						<h1 className="text-center mt-5">Edit contact</h1>
 						<form>
 							<div className="form-group">
 								<label>Full Name</label>
@@ -33,6 +28,7 @@ export const AddContact = props => {
 									type="text"
 									className="form-control"
 									placeholder="Full Name"
+									defaultValue=""
 								/>
 							</div>
 							<div className="form-group">
@@ -71,7 +67,13 @@ export const AddContact = props => {
 							<button
 								// disabled={(!state.name && !state.address) && !state.phone || !state.email}
 								onClick={() => {
-									actions.addContacts(state.name, state.address, state.phone, state.email);
+									actions.editContact(
+										state.name,
+										state.address,
+										state.phone,
+										state.email,
+										+props.match.params.index
+									);
 								}}
 								type="button"
 								className="btn btn-primary form-control">
@@ -88,6 +90,6 @@ export const AddContact = props => {
 	);
 };
 
-AddContact.propTypes = {
+EditContact.propTypes = {
 	match: PropTypes.object
 };
