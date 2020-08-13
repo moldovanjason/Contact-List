@@ -15,7 +15,10 @@ export const EditContact = props => {
 		<div className="container">
 			<Context.Consumer>
 				{({ actions, store }) => (
-                    var contact = store.allContacts.find((element) => )
+
+                    var contact = store.allContacts.find((element) => element.id == props.match.params.id);
+
+                    return ()
 					<div>
 						<h1 className="text-center mt-5">Edit contact</h1>
 						<form>
@@ -28,7 +31,7 @@ export const EditContact = props => {
 									type="text"
 									className="form-control"
 									placeholder="Full Name"
-									defaultValue=""
+									defaultValue={contact.full_name}
 								/>
 							</div>
 							<div className="form-group">
@@ -39,7 +42,8 @@ export const EditContact = props => {
 									}}
 									type="email"
 									className="form-control"
-									placeholder="Enter email"
+                                    placeholder="Enter email"
+                                    defaultValue={contact.email}
 								/>
 							</div>
 							<div className="form-group">
@@ -50,7 +54,8 @@ export const EditContact = props => {
 									}}
 									type="phone"
 									className="form-control"
-									placeholder="Enter phone"
+                                    placeholder="Enter phone"
+                                    defaultValue={contact.phone}
 								/>
 							</div>
 							<div className="form-group">
@@ -61,7 +66,8 @@ export const EditContact = props => {
 									}}
 									type="text"
 									className="form-control"
-									placeholder="Enter address"
+                                    placeholder="Enter address"
+                                    defaultValue={contact.address}
 								/>
 							</div>
 							<button
