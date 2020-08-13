@@ -21,7 +21,7 @@ export const ContactCard = props => {
 						</div>
 						<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 							<div className=" float-right">
-								<button className="btn" onClick={() => actions.deleteContacts(props.index)}>/
+								<button className="btn" onClick={() => actions.deleteContacts(props.index)}>
 									<i className="fas fa-pencil-alt mr-3" />
 								</button>
 								<button className="btn" onClick={() => actions.deleteContacts(props.index)}>
