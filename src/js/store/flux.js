@@ -42,8 +42,8 @@ const getState = ({ getStore, setStore }) => {
 					.catch(err => alert(err.message));
 			},
 
-			editContact: (name, address, phone, email, idToEdit) => {
-				fetch(`https://assets.breatheco.de/apis/fake/contact/${idToEdit}`, {
+			editContact: (name, address, phone, email, id) => {
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
 					method: "PUT",
 					headers: {
 						"Content-Type": "application/json"
