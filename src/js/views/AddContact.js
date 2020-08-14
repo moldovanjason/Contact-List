@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 export const AddContact = props => {
+	const [disabledButton, setDisabledButton] = useState(true);
 	const [state, setState] = useState({
 		name: null,
 		address: null,
@@ -11,16 +12,18 @@ export const AddContact = props => {
 		email: null
 	});
 
-	function handleSave(actions) {
-		if (props.match.path === "/add") {
-			actions.addContacts(state.name, state.address, state.phone, state.email);
-		} else actions.editContact(state.name, state.address, state.phone, state.email, +props.match.params.index);
-	}
+	useEffect(() => {
+		if (state.name && state.address && state.phone && state.email) {
+			setDisabledButton(false);
+		} else {
+			setDisabledButton(true);
+		}
+	}, [state]);
 
 	return (
 		<div className="container">
 			<Context.Consumer>
-				{({ store, actions }) => (
+				{({ actions, store }) => (
 					<div>
 						<h1 className="text-center mt-5">Add a new contact</h1>
 						<form>
@@ -69,12 +72,13 @@ export const AddContact = props => {
 								/>
 							</div>
 							<button
-								disabled={!state.name || !state.address || !state.phone || !state.email}
+								disabled={disabledButton}
 								onClick={() => {
-									handleSave(actions);
+									actions.addContacts(state.name, state.address, state.phone, state.email);
+									props.history.push("/");
 								}}
 								type="button"
-								className="btn btn-primary form-control">
+								className={`btn ${disabledButton ? "btn-secondary" : "btn-primary"} form-control`}>
 								save
 							</button>
 							<Link className="mt-3 w-100 text-center" to="/">
@@ -89,5 +93,6 @@ export const AddContact = props => {
 };
 
 AddContact.propTypes = {
-	match: PropTypes.object
+	match: PropTypes.object,
+	history: PropTypes.object
 };
