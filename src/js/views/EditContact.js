@@ -100,4 +100,3 @@ EditContact.propTypes = {
 	match: PropTypes.object,
 	history: PropTypes.object
 };
-
