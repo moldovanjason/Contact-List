@@ -32,3 +32,4 @@ export class Single extends React.Component {
 Single.propTypes = {
 	match: PropTypes.object
 };
+//////////
