@@ -24,11 +24,9 @@ export class Single extends React.Component {
 						Back home
 					</span>
 				</Link>
-			</div>
-
-);
+            </div>
+            );
 	}
-
 }
 
 Single.pr
