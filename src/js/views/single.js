@@ -25,11 +25,14 @@ export class Single extends React.Component {
 					</span>
 				</Link>
 			</div>
-		);
+
+);
 	}
+
 }
 
-Single.propTypes = {
+Single.pr
+opTypes = {
 	match: PropTypes.object
 };
-/////////
+////////
