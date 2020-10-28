@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import ContactCard from "../component/ContactCard.js";
+import Navbar from "../component/navbar";
 
 export const Contacts = () => {
 	return (
 		<div className="container">
+			<Navbar />
 			<Context.Consumer>
 				{({ store, actions }) => (
 					<div>
