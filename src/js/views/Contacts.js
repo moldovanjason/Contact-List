@@ -7,12 +7,12 @@ import Navbar from "../component/navbar";
 export const Contacts = () => {
 	return (
 		<div className="container">
-			<Navbar />
+			{/* <Navbar /> */}
 			<Context.Consumer>
 				{({ store, actions }) => (
 					<div>
 						<p className="text-right my-3">
-							<Link className="btn btn-success" to="/add">
+							<Link className="addnewcontact btn btn-success" to="/add">
 								Add new contact
 							</Link>
 						</p>
