@@ -35,7 +35,7 @@ const ContactCard = props => {
 								className="fa fa-phone fa-fw text-muted mr-3"
 								data-toggle="tooltip"
 								title=""
-								data-original-title="(870) 288-4149"
+								data-original-title="(870) 288-414*"
 							/>
 							<span className="text-muted small">{props.phone}</span>
 							<br />
