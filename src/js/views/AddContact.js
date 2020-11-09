@@ -9,11 +9,12 @@ export const AddContact = props => {
 		name: null,
 		address: null,
 		phone: null,
-		email: null
+		email: null,
+		stage: null
 	});
 
 	useEffect(() => {
-		if (state.name && state.address && state.phone && state.email) {
+		if (state.name && state.address && state.phone && state.email && state.stage) {
 			setDisabledButton(false);
 		} else {
 			setDisabledButton(true);
@@ -57,7 +58,7 @@ export const AddContact = props => {
 									}}
 									type="phone"
 									className="form-control"
-									placeholder="Enter phone"
+									placeholder="Enter phone number"
 								/>
 							</div>
 							<div className="form-group">
@@ -71,10 +72,29 @@ export const AddContact = props => {
 									placeholder="Enter address"
 								/>
 							</div>
+							<div className="selectEdit">
+								<label>Stage</label>
+								<select
+									className="form-control"
+									onChange={event => {
+										setState({ ...state, stage: event.target.value });
+									}}>
+									<option>New Client</option>
+									<option>Interested</option>
+									<option>Not Interested</option>
+									<option>Closed</option>
+								</select>
+							</div>
 							<button
 								disabled={disabledButton}
 								onClick={() => {
-									actions.addContacts(state.name, state.address, state.phone, state.email);
+									actions.addContacts(
+										state.name,
+										state.address,
+										state.phone,
+										state.email,
+										state.stage
+									);
 									props.history.push("/");
 								}}
 								type="button"

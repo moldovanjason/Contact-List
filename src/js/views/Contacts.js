@@ -11,11 +11,16 @@ export const Contacts = () => {
 			<Context.Consumer>
 				{({ store, actions }) => (
 					<div>
-						<p className="text-right my-3">
-							<Link className="addnewcontact btn btn-success" to="/add">
-								Add new contact
-							</Link>
-						</p>
+						<div>
+							<p className="text-right my-3">
+								<Link className="stageofcontact btn btn-primary" to="/stage">
+									Stage of contact
+								</Link>
+								<Link className="addnewcontact btn btn-success" to="/add">
+									Add new contact
+								</Link>
+							</p>
+						</div>
 						<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
 							<ul className="list-group pull-down" id="contact-list">
 								{/* map allContacts from store */}
@@ -27,6 +32,7 @@ export const Contacts = () => {
 										address={value.address}
 										phone={value.phone}
 										email={value.email}
+										stage={value.stage}
 										key={indexOfContact}
 										index={indexOfContact}
 										id={value.id}

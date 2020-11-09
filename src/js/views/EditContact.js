@@ -71,6 +71,19 @@ export const EditContact = props => {
 							value={state.address}
 						/>
 					</div>
+					<div className="selectEdit">
+						<label>Stage</label>
+						<select
+							className="form-control"
+							onChange={event => {
+								setState({ ...state, stage: event.target.value });
+							}}>
+							<option>New Client</option>
+							<option>Interested</option>
+							<option>Not Interested</option>
+							<option>Closed</option>
+						</select>
+					</div>
 					<button
 						disabled={disabledButton}
 						onClick={() => {

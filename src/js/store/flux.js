@@ -4,7 +4,7 @@ const getState = ({ getStore, setStore }) => {
 			allContacts: []
 		},
 		actions: {
-			addContacts: (name, address, phone, email) => {
+			addContacts: (name, address, phone, email, stage) => {
 				fetch("https://assets.breatheco.de/apis/fake/contact/", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
@@ -13,7 +13,8 @@ const getState = ({ getStore, setStore }) => {
 						email,
 						agenda_slug: "expAgendaForCohortIII",
 						address,
-						phone
+						phone,
+						stage
 					})
 				})
 					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
@@ -42,7 +43,7 @@ const getState = ({ getStore, setStore }) => {
 					.catch(err => alert(err.message));
 			},
 
-			editContact: (name, address, phone, email, id) => {
+			editContact: (name, address, phone, email, stage, id) => {
 				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
 					method: "PUT",
 					headers: {
@@ -53,7 +54,8 @@ const getState = ({ getStore, setStore }) => {
 						full_name: name,
 						email,
 						address,
-						phone
+						phone,
+						stage
 					})
 				})
 					.then(data => data.json().then(response => ({ status: data.status, resMsg: response.msg })))
