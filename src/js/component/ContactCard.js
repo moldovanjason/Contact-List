@@ -5,9 +5,10 @@ import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 
 const ContactCard = props => {
+	console.log(props);
 	return (
 		<li className="list-group-item">
-			<Context.Consumer>
+			{/* <Context.Consumer> */}
 				{({ store, actions }) => (
 					<div className="row w-100">
 						{/* <div className="col-12 col-sm-6 col-md-3 px-0">
@@ -46,12 +47,12 @@ const ContactCard = props => {
 								title=""
 							/>
 							<span className="text-muted small text-truncate">{props.email}</span>
-							<br/>
+							<br />
 							<span className="text-muted small text-truncate">{props.stage}</span>
 						</div>
 					</div>
 				)}
-			</Context.Consumer>
+			{/* </Context.Consumer> */}
 		</li>
 	);
 };
@@ -67,6 +68,7 @@ ContactCard.propTypes = {
 	address: PropTypes.string,
 	phone: PropTypes.string,
 	email: PropTypes.string,
+	stage: PropTypes.string,
 	id: PropTypes.string
 };
 
