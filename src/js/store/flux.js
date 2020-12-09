@@ -1,7 +1,8 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			allContacts: []
+			allContacts: [],
+			stage: []
 		},
 		actions: {
 			addContacts: (name, address, phone, email, stage) => {

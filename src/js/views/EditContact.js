@@ -77,7 +77,10 @@ export const EditContact = props => {
 							className="form-control"
 							onChange={event => {
 								setState({ ...state, stage: event.target.value });
-							}}>
+							}}
+							placeholder="Select Stage"
+							// value={state.stage}
+						>
 							<option>New Client</option>
 							<option>Interested</option>
 							<option>Not Interested</option>

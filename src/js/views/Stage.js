@@ -6,27 +6,14 @@ import PropTypes from "prop-types";
 function Stage() {
 	return (
 		<>
-			<div className="stagePage">
-				<p className="text-right my-3">
-					<Link className="addnewcontact btn btn-success" to="/">
-						Back to contacts
-					</Link>
-				</p>
-				<div className="stages">
-					<div>
-						<div className="newClient">New Client</div>
-						<ul>
-							<li>Not available</li>
-							<li>Available</li>
-							<li>Non</li>
-						</ul>
-					</div>
-					<div className="newClient">New Client</div>
-					<div className="Interested">Interested</div>
-					<div className="notInterested">Not Interested</div>
-					<div className="closed ">Closed</div>
-				</div>
-			</div>
+			<table className="stageTable">
+				<thread>
+					<tr>1</tr>
+					<tr>2</tr>
+					<tr>3</tr>
+					<tr>4</tr>
+				</thread>
+			</table>
 		</>
 	);
 }
