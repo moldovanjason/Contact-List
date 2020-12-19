@@ -6,8 +6,12 @@
     display:flex;
 }
 
+.stages{
+    justify-content: space-evenly;
+}
+
 .stageTable{
-    text-align: center;
+    text-align:center;
 }
 
 .navbar{
@@ -59,7 +63,12 @@
     max-width: 1140px;
 }
 
-.newClient{
-    // border:1px solid rgba(0, 0, 0, 0.125);
-    // border-radius:5px;
+.stageButton{
+    margin-top:1rem;
+    margin-left:62.4rem;
 }
+
+// .newClient{
+//     border:1px solid rgba(0, 0, 0, 0.125);
+//     border-radius:5px;
+// }

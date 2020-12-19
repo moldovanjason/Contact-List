@@ -6,16 +6,21 @@ import PropTypes from "prop-types";
 function Stage() {
 	return (
 		<>
-			<table className="stageTable">
-				<thread>
-					<tr>1</tr>
-					<tr>2</tr>
-					<tr>3</tr>
-					<tr>4</tr>
-				</thread>
-			</table>
+			<div className="stagePage">
+				<Link className="stageButton btn btn-primary" to="/">
+					Home Page
+				</Link>
+				<div className="stages">
+					<div>New Client</div>
+					<div>Not Interested</div>
+					<div>Interested</div>
+					<div>Closed</div>
+				</div>
+			</div>
 		</>
 	);
 }
 
 export default Stage;
+
+/////
