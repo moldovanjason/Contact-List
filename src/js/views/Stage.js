@@ -11,10 +11,18 @@ function Stage() {
 					Home Page
 				</Link>
 				<div className="stages">
-					<div>New Client</div>
-					<div>Not Interested</div>
-					<div>Interested</div>
-					<div>Closed</div>
+					<div>
+						<div>New Client</div>
+					</div>
+					<div>
+						<div>Not Interested</div>
+					</div>
+					<div>
+						<div>Interested</div>
+					</div>
+					<div>
+						<div>Closed</div>
+					</div>
 				</div>
 			</div>
 		</>
