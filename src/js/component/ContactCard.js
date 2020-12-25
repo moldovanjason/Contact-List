@@ -48,7 +48,7 @@ const ContactCard = props => {
 							/>
 							<span className="text-muted small text-truncate">{props.email}</span>
 							<br />
-							<span className="text-muted small text-truncate">{props.stage}</span>
+							<span className="text-muted small text-truncate">{props.stage}HC Stage:0002</span>
 						</div>
 					</div>
 				)}

@@ -76,9 +76,11 @@ export const AddContact = props => {
 								<label>Stage</label>
 								<select
 									className="form-control"
+									placeholder="Select Stage"
 									onChange={event => {
 										setState({ ...state, stage: event.target.value });
 									}}>
+									<option value="">Select Stage</option>
 									<option>New Client</option>
 									<option>Interested</option>
 									<option>Not Interested</option>
@@ -102,7 +104,7 @@ export const AddContact = props => {
 								save
 							</button>
 							<Link className="mt-3 w-100 text-center" to="/">
-								or get back to contacts
+								or go back to contacts
 							</Link>
 						</form>
 					</div>
