@@ -76,11 +76,11 @@ export const AddContact = props => {
 								<label>Stage</label>
 								<select
 									className="form-control"
-									placeholder="Select Stage"
+									// placeholder="Select Stage"
 									onChange={event => {
 										setState({ ...state, stage: event.target.value });
 									}}>
-									<option value="">Select Stage</option>
+									{/* <option>Select Stage</option> */}
 									<option>New Client</option>
 									<option>Interested</option>
 									<option>Not Interested</option>

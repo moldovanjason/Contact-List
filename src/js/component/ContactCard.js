@@ -3,9 +3,9 @@ import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
+// import { FcDatabase } from "react-icons/fc";
 
 const ContactCard = props => {
-	console.log(props);
 	return (
 		<li className="list-group-item">
 			<Context.Consumer>
