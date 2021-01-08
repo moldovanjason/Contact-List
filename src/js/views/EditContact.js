@@ -95,6 +95,7 @@ export const EditContact = props => {
 								state.address,
 								state.phone,
 								state.email,
+								state.props,
 								props.match.params.id
 							);
 							props.history.push("/");

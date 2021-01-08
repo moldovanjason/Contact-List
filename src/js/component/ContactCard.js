@@ -3,7 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
-// import { FcDatabase } from "react-icons/fc";
+import { BiCalendarPlus } from "react-icons/bi";
 
 const ContactCard = props => {
 	return (
@@ -48,7 +48,10 @@ const ContactCard = props => {
 							/>
 							<span className="text-muted small text-truncate">{props.email}</span>
 							<br />
-							<span className="text-muted small text-truncate">{props.stage}HC Stage:0002</span>
+							<span className="stageIcon">
+								<BiCalendarPlus />
+							</span>
+							<span className="text-muted small text-truncate">{props.stage}INSERT STAGE</span>
 						</div>
 					</div>
 				)}
