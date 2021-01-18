@@ -1,3 +1,5 @@
+const host = "https://3000-a7b3b9a3-7a6e-4066-bbf8-eca2e9a8c0f5.ws-us03.gitpod.io";
+
 import React, { useState, useEffect } from "react";
 import getState from "./flux.js";
 
@@ -18,7 +20,7 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			fetch("https://assets.breatheco.de/apis/fake/contact/agenda/expAgendaForCohortIII")
+			fetch(`${host}/user`)
 				.then(red => red.json())
 				.then(data => setState({ ...state, store: { allContacts: data } }))
 				.catch(err => alert(err.message));

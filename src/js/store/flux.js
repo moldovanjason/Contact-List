@@ -1,3 +1,5 @@
+const host = "https://3000-a7b3b9a3-7a6e-4066-bbf8-eca2e9a8c0f5.ws-us03.gitpod.io";
+
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
@@ -5,7 +7,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 		actions: {
 			addContacts: (name, address, phone, email, stage) => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/", {
+				fetch(`${host}/user`, {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
@@ -22,7 +24,7 @@ const getState = ({ getStore, setStore }) => {
 						if (status === 400) alert(resMsg);
 					})
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/expAgendaForCohortIII")
+						fetch(host)
 							.then(data => data.json())
 							.then(data => setStore({ allContacts: data }));
 					})
@@ -30,13 +32,13 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			deleteContacts: idToDelete => {
-				fetch(`https://assets.breatheco.de/apis/fake/contact/${idToDelete}`, {
+				fetch(`${host}/user/${idToDelete}`, {
 					method: "DELETE",
 					headers: { "Content-Type": "application/json" }
 				})
 					.then(res => res.json())
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/expAgendaForCohortIII")
+						fetch(host)
 							.then(red => red.json())
 							.then(data => setStore({ allContacts: data }));
 					})
@@ -44,7 +46,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			editContact: (name, address, phone, email, stage, id) => {
-				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
+				fetch(`${host}/user/${id}`, {
 					method: "PUT",
 					headers: {
 						"Content-Type": "application/json"
@@ -63,7 +65,7 @@ const getState = ({ getStore, setStore }) => {
 						if (status === 400) alert(resMsg);
 					})
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/expAgendaForCohortIII")
+						fetch("API")
 							.then(res => res.json())
 							.then(data => setStore({ allContacts: data }));
 					})
