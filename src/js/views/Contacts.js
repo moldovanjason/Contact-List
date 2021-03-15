@@ -13,9 +13,9 @@ export const Contacts = () => {
 					<div>
 						<div>
 							<p className="text-right my-3">
-								<Link className="stageofcontact btn btn-primary" to="/stage">
+								{/* <Link className="stageofcontact btn btn-primary" to="/stage">
 									Stage of contact
-								</Link>
+								</Link> */}
 								<Link className="addnewcontact btn btn-success" to="/add">
 									Add new contact
 								</Link>
